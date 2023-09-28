@@ -43,7 +43,7 @@ createApp({
 
       counter: 0,
 
-      isNext: null,
+      isForward: true,
 
       games: [
         {
@@ -88,33 +88,14 @@ createApp({
   },
 
   methods: {
-    slideshow(){
+
+    slideshow() {
       setInterval(() => {
-        console.log('e 1')
-      }, 2500)
+
+        this.isForward ? this.goNext(true) : this.goNext(false)
+
+      }, 1500)
     },
-
-    // goNext(){
-    //   this.games[this.counter].isActive = false;
-    //   this.counter++;
-    //   this.games[this.counter].isActive = true;
-    //   console.log(this.counter)
-
-
-    //   if (this.counter === this.games.length) {
-    //     this.counter = 0;
-
-    //   }
-    // },
-
-    // goPrev(){
-    //   this.games[this.counter].isActive = false;
-    //   this.counter--;
-    //   this.games[this.counter].isActive = true;
-    //   if (this.counter < 0) {
-    //     this.counter = this.games.length - 1;
-    //   }
-    // },
 
     goNext(isNext){
 
@@ -130,12 +111,14 @@ createApp({
       
     }
 
+
   },
   
   mounted(){
     console.log(this.counter)
     // console.log('hello mounted')
 
+    this.slideshow()
   }
 
   
