@@ -26,7 +26,7 @@
 
           <div class="img-box item active">
 
-            <img src="img/01.webp">
+            <img :src="games[0].image">
       
             <div class="text-box">
               <h2 class="title">Marvel's Spiderman Miles Morale</h2>
@@ -51,12 +51,8 @@
 
           <div class="thumbnails">
 
-            <div class="thumbnail">
-              <img src="img/01.webp" class="item-thumb">
-              <img src="img/02.webp" class="item-thumb">
-              <img src="img/03.webp" class="item-thumb">
-              <img src="img/04.webp" class="item-thumb">
-              <img src="img/05.webp" class="item-thumb">
+            <div class="thumbnail" v-for="game in games">
+              <img :src="game.image" class="item-thumb">
             </div>
 
           </div>
@@ -81,6 +77,13 @@
     </div>
 
   </div>
+
+  <!-- <div class="container my-3" id="test">
+    <ul>
+      <li v-for="game in games">{{game}}</li>
+    </ul>
+  </div> -->
+
 
   <script src="./js/script.js"></script>
 </body>
