@@ -45,6 +45,8 @@ createApp({
 
       isForward: true,
 
+      clock: null,
+
       games: [
         {
           image: 'img/01.webp',
@@ -90,11 +92,7 @@ createApp({
   methods: {
 
     slideshow() {
-      setInterval(() => {
-
-        this.isForward ? this.goNext(true) : this.goNext(false)
-
-      }, 1500)
+      this.clock = setInterval(this.mySlideshow, 3000)
     },
 
     goNext(isNext){
@@ -109,6 +107,26 @@ createApp({
         this.counter = this.games.length - 1;
       }
       
+    },
+
+    mySlideshow(){
+
+      this.isForward ? this.goNext(true) : this.goNext(false)
+
+    },
+
+    pauseShow(){
+      clearInterval((this.clock))
+    },
+
+    resumeShow(){
+      this.clock = setInterval(this.mySlideshow, 3000)
+      // console.log('im out')
+
+    },
+
+    test(){
+      console.log('ciao')
     }
 
 
