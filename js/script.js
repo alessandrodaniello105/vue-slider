@@ -43,37 +43,43 @@ createApp({
 
       counter: 0,
 
-      isActive: false,
+      isNext: null,
 
       games: [
         {
           image: 'img/01.webp',
           title: 'Marvel\'s Spiderman Miles Morale',
-          text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
+          text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+          isActive: true,
+
         },
 
         {
           image: 'img/02.webp',
           title: 'Ratchet & Clank: Rift Apart',
-          text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.'
+          text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+          isActive: false,
         },
       
         {
           image: 'img/03.webp',
           title: 'Fortnite',
-          text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos."
+          text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+          isActive: false,
         },
       
         {
           image: 'img/04.webp',
           title: 'Stray',
-          text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city'
+          text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+          isActive: false,
         },
       
         {
           image: 'img/05.webp',
           title: "Marvel's Avengers",
-          text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.'
+          text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+          isActive: false,
         }
 
       ]
@@ -82,21 +88,59 @@ createApp({
   },
 
   methods: {
-    // slideshow(){
-    //   setInterval(() => {
+    slideshow(){
+      setInterval(() => {
+        console.log('e 1')
+      }, 2500)
+    },
 
-    //   }, 2500)
-    // }
+    // goNext(){
+    //   this.games[this.counter].isActive = false;
+    //   this.counter++;
+    //   this.games[this.counter].isActive = true;
+    //   console.log(this.counter)
 
-    goNext(){
-      this.counter++
-      console.log(this.counter)
+
+    //   if (this.counter === this.games.length) {
+    //     this.counter = 0;
+
+    //   }
+    // },
+
+    // goPrev(){
+    //   this.games[this.counter].isActive = false;
+    //   this.counter--;
+    //   this.games[this.counter].isActive = true;
+    //   if (this.counter < 0) {
+    //     this.counter = this.games.length - 1;
+    //   }
+    // },
+
+    goNext(isNext){
+
+      isNext ? this.counter++ : this.counter--
+
+      if (this.counter > this.games.length - 1) {
+        this.counter = 0;
+      }
+
+      if (this.counter < 0) {
+        this.counter = this.games.length - 1;
+      }
+      
     }
+
+
+
+
+
+
   },
   
   mounted(){
     console.log(this.counter)
     // console.log('hello mounted')
+
   }
 
   

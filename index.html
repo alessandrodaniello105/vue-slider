@@ -52,16 +52,19 @@
           <div class="thumbnails">
 
             <div class="thumbnail" v-for="(game, index) in games">
-              <img :src="game.image"  class="item-thumb">
+              <img class="item-thumb"
+              
+              :class="{'active': index === counter}"
+              :src="game.image">
             </div>
 
           </div>
 
-          <div class="slider-arrow up">
+          <div @click="goNext(false)" class="slider-arrow up">
             <i class="fa-solid fa-chevron-up"></i>
           </div>
 
-          <div @click="goNext" :class="isActive ? 'active' : '' " class="slider-arrow down">
+          <div @click="goNext(true)" class="slider-arrow down">
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           
