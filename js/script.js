@@ -130,11 +130,6 @@ createApp({
       
     }
 
-
-
-
-
-
   },
   
   mounted(){

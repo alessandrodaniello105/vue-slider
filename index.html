@@ -53,7 +53,7 @@
 
             <div class="thumbnail" v-for="(game, index) in games">
               <img class="item-thumb"
-              
+              @click="counter = index"
               :class="{'active': index === counter}"
               :src="game.image">
             </div>
