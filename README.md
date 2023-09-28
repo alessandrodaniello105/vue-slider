@@ -2,6 +2,7 @@
 ===
 
 1. Copio index e css dall'esercizio slider
+1. Carico Vue
 1. Creo la parte statica nella pagina html
 1. Creo il mio data con il flag di attivazione e il counter
 1. Creo la lista delle immagini

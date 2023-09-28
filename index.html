@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- VUE.JS -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous"/>
 
   <link rel="stylesheet" href="./css/style.css">
 
-  <title>**Carosello Array di Oggetti**</title>
+  <title>Vue Slider</title>
 </head>
 <body>
   <div class="main-wrapper">
@@ -19,8 +22,19 @@
       <div class="slider">
 
         <div class="items-wrapper">
+          
 
-          <!-- 3. -->
+          <div class="img-box item active">
+
+            <img src="img/01.webp">
+      
+            <div class="text-box">
+              <h2 class="title">Marvel's Spiderman Miles Morale</h2>
+      
+              <p class="text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+            </div>
+        
+          </div>
 
           <!--
           <img src="img/01.webp" alt="">
@@ -35,7 +49,17 @@
 
         <div class="sidebar">
 
-          <div class="thumbnails"></div>
+          <div class="thumbnails">
+
+            <div class="thumbnail">
+              <img src="img/01.webp" class="item-thumb">
+              <img src="img/02.webp" class="item-thumb">
+              <img src="img/03.webp" class="item-thumb">
+              <img src="img/04.webp" class="item-thumb">
+              <img src="img/05.webp" class="item-thumb">
+            </div>
+
+          </div>
 
           <div class="slider-arrow up">
             <i class="fa-solid fa-chevron-up"></i>
@@ -44,8 +68,7 @@
           <div class="slider-arrow down">
             <i class="fa-solid fa-chevron-down"></i>
           </div>
-
-          <!-- BONUS 2 // 1. Creo un bottone "inverti direzione" nel DOM -->
+          
           <div class="slider-arrow invert">
             <i class="fa-solid fa-retweet"></i>
           </div>
