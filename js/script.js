@@ -43,11 +43,13 @@ createApp({
 
       counter: 0,
 
+      isActive: false,
+
       games: [
         {
           image: 'img/01.webp',
           title: 'Marvel\'s Spiderman Miles Morale',
-          text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+          text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.'
         },
 
         {
@@ -79,9 +81,21 @@ createApp({
     }
   },
 
+  methods: {
+    // slideshow(){
+    //   setInterval(() => {
 
+    //   }, 2500)
+    // }
 
+    goNext(){
+      this.counter++
+      console.log(this.counter)
+    }
+  },
+  
   mounted(){
+    console.log(this.counter)
     // console.log('hello mounted')
   }
 
