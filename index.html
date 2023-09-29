@@ -19,9 +19,9 @@
 
     <div class="container"  id="app-slider">
 
-      <div class="slider" @mouseenter="pauseShow" @mouseout="resumeShow">
+      <div class="slider" @mouseenter="runSlideshow = false" @mouseout="runSlideshow = true">
 
-        <div class="items-wrapper" >
+        <div class="items-wrapper">
           
 
           <div class="img-box item active">
@@ -29,9 +29,9 @@
             <img :src="games[counter].image">
       
             <div class="text-box">
-              <h2 class="title">Marvel's Spiderman Miles Morale</h2>
+              <h2 class="title">{{games[counter].title}}</h2>
       
-              <p class="text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+              <p class="text">{{games[counter].text}}</p>
             </div>
         
           </div>

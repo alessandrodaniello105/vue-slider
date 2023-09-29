@@ -47,6 +47,8 @@ createApp({
 
       clock: null,
 
+      runSlideshow: true,
+
       games: [
         {
           image: 'img/01.webp',
@@ -91,39 +93,41 @@ createApp({
 
   methods: {
 
-    slideshow() {
-      this.clock = setInterval(this.mySlideshow, 3000)
+    autoSlide() {
+      this.clock = setInterval(() => {
+        if (this.runSlideshow) this.slideshow()
+     
+      }, 3000)
     },
 
     goNext(isNext){
 
       isNext ? this.counter++ : this.counter--
 
-      if (this.counter > this.games.length - 1) {
-        this.counter = 0;
-      }
+      if (this.counter > this.games.length - 1) this.counter = 0;
 
-      if (this.counter < 0) {
-        this.counter = this.games.length - 1;
-      }
+      if (this.counter < 0) this.counter = this.games.length - 1;
       
     },
 
-    mySlideshow(){
+
+    
+
+    slideshow(){
 
       this.isForward ? this.goNext(true) : this.goNext(false)
 
     },
 
-    pauseShow(){
-      clearInterval((this.clock))
-    },
+    // pauseShow(){
+    //   clearInterval((this.clock))
+    // },
 
-    resumeShow(){
-      this.clock = setInterval(this.mySlideshow, 3000)
-      // console.log('im out')
+    // resumeShow(){
+    //   this.clock = setInterval(this.mySlideshow, 3000)
+    //   // console.log('im out')
 
-    },
+    // },
 
     test(){
       console.log('ciao')
@@ -133,13 +137,12 @@ createApp({
   },
   
   mounted(){
-    console.log(this.counter)
     // console.log('hello mounted')
 
-    this.slideshow()
-  }
+    this.autoSlide()
 
   
+}
 }).mount('#app-slider')
 
 
